@@ -1,0 +1,8 @@
+las devDependences son necesarias únicas para construir la aplicación y estan en el archivo package.json
+las devDependences son las que manejamos para la creación del protecto 
+un modulo es un archivo independiente que hace una tarea
+Node nos ayuda a tener muchas herramientas y la mayoria gratuitas y usar caracteristicas propias de javascript
+los numeros despues de los archivos "hash" sirven para cuando cambiemos algo del documento estos cambien cada vez y el navegador los detecte
+
+
+EL ARCHIVO que voy a mostrar en el navegador van a ser todos los que tenga detro de la carpeta dist 

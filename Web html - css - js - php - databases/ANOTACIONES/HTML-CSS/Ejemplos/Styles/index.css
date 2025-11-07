@@ -1,0 +1,36 @@
+/* Crearemos la paleta de colores usando la Custom Properties para crearla mediante una "variable" */
+:root{
+    --color-primario: #FFC107;
+    --Negro: #000000;
+    --Blanco: #ffffff;
+    --color-cuaternario: #ff0000;
+    --color-quintario: #000000;
+
+    /* tambien podemos crear fuentas para usar  */
+}
+
+html{
+    font-size: 62.5%;
+}
+
+body{
+    font-size: 16px;
+}
+
+.Titulo{
+    font-size: 3.8rem;
+    color: var(--Negro);
+    text-align: center;
+    margin-top: 2rem;
+}
+
+.Titulo span{
+    color: #ff0000;
+    font-size: 2rem;
+}
+
+/* Cambiar el tipo de fuente */
+
+.Titulo{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}

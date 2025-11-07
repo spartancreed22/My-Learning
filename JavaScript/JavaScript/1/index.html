@@ -1,0 +1,94 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blackjack Game</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="./assets/css/nav.css">
+</head>
+<body>
+    <nav class="fijo navbar navbar-expand-md">
+        <div class="barra_nav container-fluid navbar-nav">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                <h1 class="container d-flex justify-content-between align-items-center">
+                    <img src="./assets/img/logoEmpresa.png" alt="Logo de la Empresa" style="max-height: 70px; border-radius: 50%;">
+                </h1>
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item p-4">
+                        <a class="nav-link" href="./index.php" style="font-weight: bold;">
+                            BlackJack
+                        </a>
+                    </li>
+                    <!-- Agrega más elementos de navegación según sea necesario -->
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <br><br><br>
+
+    <div id="botones_cards" class="botones row mt-6 justify-content-center">
+        <!-- Center en el contenido horizontal -->
+        <div class="col-md-2s">
+            <button class="btn btn-primary p-3" id="recet_game">Nuevo Juego</button>
+            <button class="btn btn-primary p-3" disabled id="llamar_card">Pedir Carta</button>
+            <button class="btn btn-danger p-3"  disabled id="stop">Detener</button>
+        </div>
+    </div>
+
+    <div class="tablero container mt-2 ">
+        <div class="contenido row g-3">
+            <div class="medi_pantalla col-md-6 p-4" style="width: 50%; height: auto;">
+                <h2 class="player">Tu Mano</h2>
+                <h5 class="puntos">0</h5>
+
+                <div class="card h-100" >
+                    <br>
+                    <h3 class="text-center">Cartas</h3>
+                    
+                    <div class="cartas_div carta_player card-body row g-3" id="cartas_mias">
+                       
+
+                        
+                    </div>
+                </div>
+            </div>
+
+            <div class="medi_pantalla col-md-6 p-4" style="width: 50%; height: auto;">
+                <h2 class="player">Mano de la casa</h2>
+                <h5 class="puntos">0</h5>
+
+                <div class="card h-100">
+                    <br>
+                    <h3 class="text-center">Cartas</h3>
+                    <div class="cartas_div carta_player card-body row g-3" id="cartas_pc">
+                       
+
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="./assets/js/underscore.js"></script>
+    <script src="./assets/js/juego-min.js"></script>
+
+    <script>
+
+        console.log( BlackJack );
+
+        BlackJack.desdeCero();
+
+    </script>
+
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+</body>
+</html>

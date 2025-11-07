@@ -1,0 +1,30 @@
+{
+    "students": [
+      {
+        "id": "S001",
+        "name": "Alice",
+        "semesters": [
+          {
+            "term": "Fall 2023",
+            "subjects": [
+              { "name": "Math", "credits": 4, "performance": { "assignments": 80, "exams": 70, "attendance": 85 } },
+              { "name": "Physics", "credits": 3, "performance": { "assignments": 90, "exams": 60, "attendance": 70 } }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "S002",
+        "name": "Bob",
+        "semesters": [
+          {
+            "term": "Fall 2023",
+            "subjects": [
+              { "name": "Math", "credits": 4, "performance": { "assignments": 85, "exams": 75, "attendance": 90 } },
+              { "name": "English", "credits": 2, "performance": { "assignments": 95, "exams": 82, "attendance": 60 } }
+            ]
+          }
+        ]
+      }
+    ]
+}

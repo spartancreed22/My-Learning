@@ -1,0 +1,169 @@
+/* Estilos personalizados para la dashboard */
+/* Estilos personalizados para la dashboard con opacidad */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+    height: 100vh;
+    position: relative;
+}
+
+body::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url(../img/index_bg.jpg);
+    background-repeat: no-repeat;
+    background-position: center top;
+    background-size: cover;
+    opacity: 0.8; /* Cambia el valor para ajustar la opacidad */
+    z-index: -1; /* Coloca esta capa detrás del contenido principal */
+}
+
+ 
+
+.titulo-resumen {
+    text-align: center;
+    color: #000; /* Color negro */
+    font-weight: bold; /* Efecto de negrilla */}
+
+
+.titulo_div{
+    height: auto;
+    width: auto;
+    color: rgba(0, 0, 0, 0.8); /* Cambiado a un color negro casi transparente */
+}
+
+/* Estilo para el ícono dentro del h2 */
+.titulo {
+    margin-right: 10px; /* Espacio entre el ícono y el texto */
+    font-size: 24px; /* Tamaño del ícono */
+    vertical-align: middle; /* Alinea verticalmente el ícono con el texto */
+    color: #000000; /* Color del ícono (puedes cambiarlo según tu preferencia) */
+}
+
+
+
+/* Añade una capa de color semi-transparente para oscurecer la imagen de fondo */
+
+
+.overview h2,
+.global-players h2,
+.point-stats h2 {
+    font-size: 24px;
+    color: #333;
+}
+
+.card {
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.card-title {
+    font-size: 18px;
+    margin-bottom: 0;
+}
+
+.card-text {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+
+/* Estilos para el contenido principal */
+.main-content {
+    padding-bottom: 100px; /* Añade espacio en la parte inferior igual a la altura del footer */
+}
+
+/* Estilos para el footer */
+.footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    margin-bottom: 1%;
+    background-color: #333; /* Cambia el color de fondo según tus preferencias */
+    color: #fff; /* Cambia el color del texto según tus preferencias */
+    padding: 10px 0; /* Ajusta el espaciado interno según tus preferencias */
+    text-align: center;
+}
+
+
+table {
+    background-color: white;
+    text-align: left;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+th,
+td {
+    padding: 20px;
+}
+
+thead {
+    background-color: #246355;
+    border-bottom: solid 5px #0F362D;
+    color: white;
+}
+
+tr:nth-child(even) {
+    background-color: #ddd;
+}
+
+tr:hover td {
+    background-color: #374643;
+    color: white;
+}
+
+
+
+/* formulario */
+
+
+
+
+.registration-form h1 {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+.form-group {
+    margin-bottom: 10px;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-bottom: 5px;
+}
+
+.form-group label {
+    margin-right: 10px;
+}
+
+.form-group a[type="radio"] {
+    margin-right: 5px;
+    text-decoration: none;
+}
+
+.button {
+    width: 100%;
+    padding: 12px;
+    background-color: #1877f2;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.button:hover {
+    background-color: #145492;
+}

@@ -1,0 +1,157 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <title>Title</title>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <!-- Bootstrap CSS v5.2.1 -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+
+    <link rel="stylesheet" href="./css/admin.css">
+    <link rel="stylesheet" href="./css/nav.css">
+
+</head>
+
+<body>
+  <!-- Encabezado -->
+    <header class="fondo">
+        <!-- Aquí puedes agregar contenido adicional al encabezado si es necesario -->
+    
+        <!-- barra de navegacion -->
+    <nav class="fijar navbar navbar-expand-md">
+        <div class="barra_nav container-fluid navbar-nav">
+
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                <h1 class="container d-flex justify-content-between align-items-center" style=" margin-left: 15px;">
+                    <img src="./img/slogan.png" alt="">
+                </h1>
+                <ul class="navbar-nav ms-auto">
+
+                    <li class="nav-item p-4">
+                        <a class="nav-link" href="./index.php">
+                            <i class="fas fa-home" style="margin-right: 5px;"></i>
+                            INICIO
+                        </a>
+                    </li>
+
+                    <li class="nav-item dropdown p-3 d-flex align-items-center">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            <i class="fas fa-globe"></i> Usuarios
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="./listas/motos/motos.php">Region</a></li>
+                            <li><a class="dropdown-item" href="./listas/motos/cilindraje.php">KD</a></li>
+                            <li><a class="dropdown-item" href="./listas/motos/combustible.php">Muertes</a></li>
+                            <li><a class="dropdown-item" href="./listas/motos/combustible.php">Bajas</a></li>
+                            <li><a class="dropdown-item" href="./listas/motos/combustible.php">Tiros a la cabeza</a></li>
+                            <li><a class="dropdown-item" href="./listas/motos/combustible.php">Usuarios</a></li>
+                            <li><a class="dropdown-item" href="./listas/motos/estado.php">Precisión</a></li>
+                        </ul>
+                    </li>
+
+                    <li class="nav-item dropdown p-3 d-flex align-items-center">
+                        <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false" role="button">
+                            <i class="fas fa-chart-bar"></i> Partidas
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-end">
+                            <li><a class="dropdown-item" href="#">Ganadores</a></li>
+                            <li><a class="dropdown-item" href="#">Rangos</a></li>
+                            <li><a class="dropdown-item" href="#">Mapas</a></li>
+                            <li><a class="dropdown-item" href="#">Nivel</a></li>
+                        </ul>
+                    </li>
+
+                    <li class="nav-item p-2">
+                        <form method="POST" class="menu_m1">
+                            <button type="submit" name="cerrar" class="btn-cerrar">
+                                <i class="fas fa-sign-out-alt"></i>
+                                Cerrar sesión
+                            </button>
+                        </form>
+                    </li>
+                    
+                    
+                    
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <br><br>
+
+    <div class="container">
+        <div class="card">
+            <div class="card-body">
+                <div class="registration-form">
+                    <h1 class="titulo_cre">Registrarme</h1>
+                    <form action="" method="get" id="imcForm">
+                        <div class="form-group">
+                        <label for="altura">Altura (metros):</label>
+                        <input type="number" step="0.01" id="altura" placeholder="Digite Altura" required><br><br>
+
+                        <label for="peso">Peso (kg):</label>
+                        <input type="number" step="0.01" id="peso" required placeholder="Digite Peso"><br><br>
+
+                        </div>
+                        <input type="hidden" name="MM_insert" value="CalcularIMC">
+                        <button type="submit" id="calcularBtn">Registrarme</button>
+
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <br><br><br>
+
+    <div class=" d-flex justify-content-center align-items-center ">
+        <div class="main-container rounded-5 text-secondary" style="width: 70rem">
+
+            <table class="table table-bordered table-striped">
+                <thead class="bg-Success text-white">
+                    <tr>
+                        <th class="text-center">Altura</th>
+                        <th class="text-center">Peso</th>
+                        <th class="text-center">IMC</th>
+                        <th class="text-center">Fecha</th>
+
+                    </tr>
+                </thead>
+                <tbody id="resultadoTabla">
+                        <tr>
+                            <td class="text-center bg-light"></td>
+                            <td class="text-center bg-light"></td>
+                            <td class="text-center bg-light"></td>
+                            <td class="text-center bg-light"></td>
+                        </tr>
+                    
+                </tbody>
+            </table>
+        </div>
+
+    </div>    
+        
+    </header>
+
+    <script src="./js/calculo.js">
+    </script>
+
+  <!-- Bootstrap JavaScript Libraries -->
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
+    integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous">
+  </script>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.min.js"
+    integrity="sha384-7VPbUDkoPSGFnVtYi0QogXtr74QeVeeIs99Qfg5YCF+TidwNdjvaKZX19NZ/e6oz" crossorigin="anonymous">
+  </script>
+</body>
+
+</html>

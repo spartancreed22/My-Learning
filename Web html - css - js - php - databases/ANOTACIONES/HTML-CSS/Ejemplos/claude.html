@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modelo ER y Estructura BD - Biblioteca</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            margin: 0;
+            padding: 20px;
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 20px;
+            padding: 30px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+        }
+
+        h1, h2 {
+            color: #2c3e50;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        h1 {
+            font-size: 2.5em;
+            background: linear-gradient(45deg, #3498db, #8e44ad);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .models-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .model-section {
+            background: white;
+            border-radius: 15px;
+            padding: 25px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+            border: 3px solid #e8f4fd;
+        }
+
+        /* Modelo ER Styles */
+        .er-diagram {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 30px;
+        }
+
+        .entity {
+            background: linear-gradient(135deg, #74b9ff, #0984e3);
+            color: white;
+            padding: 20px;
+            border-radius: 10px;
+            min-width: 200px;
+            text-align: center;
+            box-shadow: 0 8px 20px rgba(116, 185, 255, 0.3);
+            font-weight: bold;
+            font-size: 1.2em;
+        }
+
+        .relationship {
+            background: linear-gradient(135deg, #fdcb6e, #e17055);
+            color: white;
+            padding: 15px 25px;
+            border-radius: 50px;
+            font-weight: bold;
+            transform: rotate(-15deg);
+            box-shadow: 0 8px 20px rgba(253, 203, 110, 0.3);
+        }
+
+        .cardinality {
+            background: #2d3436;
+            color: white;
+            padding: 8px 15px;
+            border-radius: 20px;
+            font-size: 0.9em;
+            font-weight: bold;
+        }
+
+        .connection {
+            width: 3px;
+            height: 40px;
+            background: linear-gradient(to bottom, #74b9ff, #e17055);
+            margin: 0 auto;
+        }
+
+        /* Tablas Relacionales */
+        .tables-container {
+            display: flex;
+            flex-direction: column;
+            gap: 25px;
+            align-items: center;
+        }
+
+        .table {
+            background: white;
+            border: 3px solid #2980b9;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 8px 25px rgba(41, 128, 185, 0.2);
+            min-width: 350px;
+        }
+
+        .table-header {
+            background: linear-gradient(135deg, #3498db, #2980b9);
+            color: white;
+            padding: 15px;
+            font-weight: bold;
+            font-size: 1.3em;
+            text-align: center;
+        }
+
+        .table-row {
+            display: flex;
+            border-bottom: 1px solid #ecf0f1;
+            min-height: 45px;
+            align-items: center;
+        }
+
+        .table-row:hover {
+            background: #f8f9fa;
+        }
+
+        .table-row:last-child {
+            border-bottom: none;
+        }
+
+        .field-name {
+            flex: 1;
+            padding: 12px 15px;
+            font-weight: 600;
+            color: #2c3e50;
+        }
+
+        .field-type {
+            padding: 12px 15px;
+            background: #ecf0f1;
+            color: #7f8c8d;
+            font-family: 'Courier New', monospace;
+            font-size: 0.9em;
+            min-width: 120px;
+            text-align: center;
+        }
+
+        .pk {
+            background: linear-gradient(135deg, #e74c3c, #c0392b);
+            color: white;
+        }
+
+        .fk {
+            background: linear-gradient(135deg, #f39c12, #e67e22);
+            color: white;
+        }
+
+        .unique {
+            background: linear-gradient(135deg, #9b59b6, #8e44ad);
+            color: white;
+        }
+
+        /* Relaciones visuales */
+        .relationships-section {
+            margin-top: 40px;
+            text-align: center;
+        }
+
+        .relationship-line {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 20px 0;
+            gap: 20px;
+        }
+
+        .table-ref {
+            background: linear-gradient(135deg, #74b9ff, #0984e3);
+            color: white;
+            padding: 10px 20px;
+            border-radius: 25px;
+            font-weight: bold;
+        }
+
+        .arrow {
+            font-size: 2em;
+            color: #e17055;
+            font-weight: bold;
+        }
+
+        .legend {
+            margin-top: 30px;
+            padding: 20px;
+            background: #f8f9fa;
+            border-radius: 12px;
+            border-left: 5px solid #3498db;
+        }
+
+        .legend-item {
+            display: flex;
+            align-items: center;
+            margin: 10px 0;
+            gap: 15px;
+        }
+
+        .legend-color {
+            width: 30px;
+            height: 20px;
+            border-radius: 5px;
+        }
+
+        @media (max-width: 768px) {
+            .models-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .relationship-line {
+                flex-direction: column;
+                gap: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>📚 Base de Datos Biblioteca</h1>
+        <p style="text-align: center; font-size: 1.1em; color: #7f8c8d; margin-bottom: 40px;">
+            Modelo Entidad-Relación y Estructura de Tablas
+        </p>
+
+        <div class="models-grid">
+            <!-- Modelo ER -->
+            <div class="model-section">
+                <h2>🔄 Modelo Entidad-Relación</h2>
+                <div class="er-diagram">
+                    <div class="entity">
+                        📝 AUTOR
+                        <br><small>AutorCod, AutorNombre</small>
+                    </div>
+                    
+                    <div class="cardinality">N (Muchos)</div>
+                    <div class="connection"></div>
+                    
+                    <div class="relationship">
+                        ESCRIBE
+                    </div>
+                    
+                    <div class="connection"></div>
+                    <div class="cardinality">M (Muchos)</div>
+                    
+                    <div class="entity">
+                        📚 LIBRO
+                        <br><small>LibroId, LibroTitulo, LibroISBN, LibroNumPag</small>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Modelo Relacional -->
+            <div class="model-section">
+                <h2>🗂️ Modelo Relacional</h2>
+                <div class="tables-container">
+                    <!-- Tabla Autor -->
+                    <div class="table">
+                        <div class="table-header">👤 AUTOR</div>
+                        <div class="table-row">
+                            <div class="field-name">AutorCod</div>
+                            <div class="field-type pk">INT PK</div>
+                        </div>
+                        <div class="table-row">
+                            <div class="field-name">AutorNombre</div>
+                            <div class="field-type">VARCHAR(80)</div>
+                        </div>
+                    </div>
+
+                    <!-- Tabla AutorLibro -->
+                    <div class="table">
+                        <div class="table-header">🔗 AUTORLIBRO</div>
+                        <div class="table-row">
+                            <div class="field-name">AutorLibro_id</div>
+                            <div class="field-type pk">INT PK</div>
+                        </div>
+                        <div class="table-row">
+                            <div class="field-name">LibroId</div>
+                            <div class="field-type fk">INT FK</div>
+                        </div>
+                        <div class="table-row">
+                            <div class="field-name">AutorCod</div>
+                            <div class="field-type fk">INT FK</div>
+                        </div>
+                    </div>
+
+                    <!-- Tabla Libro -->
+                    <div class="table">
+                        <div class="table-header">📖 LIBRO</div>
+                        <div class="table-row">
+                            <div class="field-name">LibroId</div>
+                            <div class="field-type pk">INT PK</div>
+                        </div>
+                        <div class="table-row">
+                            <div class="field-name">LibroTitulo</div>
+                            <div class="field-type">VARCHAR(80)</div>
+                        </div>
+                        <div class="table-row">
+                            <div class="field-name">LibroISBN</div>
+                            <div class="field-type unique">VARCHAR(10)</div>
+                        </div>
+                        <div class="table-row">
+                            <div class="field-name">LibroNumPag</div>
+                            <div class="field-type">INT</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Relaciones -->
+        <div class="relationships-section">
+            <h2>🔗 Relaciones Entre Tablas</h2>
+            
+            <div class="relationship-line">
+                <div class="table-ref">AUTOR</div>
+                <div class="arrow">←</div>
+                <div class="table-ref">AUTORLIBRO</div>
+                <div class="arrow">→</div>
+                <div class="table-ref">LIBRO</div>
+            </div>
+
+            <p style="font-style: italic; color: #7f8c8d; margin-top: 20px;">
+                Relación Many-to-Many (N:M) implementada a través de tabla intermedia
+            </p>
+        </div>
+
+        <!-- Leyenda -->
+        <div class="legend">
+            <h3>📋 Leyenda de Colores</h3>
+            <div class="legend-item">
+                <div class="legend-color pk"></div>
+                <span><strong>PK (Primary Key)</strong> - Clave Primaria</span>
+            </div>
+            <div class="legend-item">
+                <div class="legend-color fk"></div>
+                <span><strong>FK (Foreign Key)</strong> - Clave Foránea</span>
+            </div>
+            <div class="legend-item">
+                <div class="legend-color unique"></div>
+                <span><strong>UNIQUE</strong> - Campo Único</span>
+            </div>
+        </div>
+
+        <!-- Información adicional -->
+        <div style="margin-top: 40px; padding: 25px; background: linear-gradient(135deg, #e8f5e8, #c8e6c9); border-radius: 15px;">
+            <h3 style="color: #2e7d32; margin-bottom: 15px;">✅ Características del Diseño</h3>
+            <ul style="color: #1b5e20; line-height: 1.8;">
+                <li><strong>Normalización:</strong> Modelo normalizado hasta 3FN</li>
+                <li><strong>Integridad:</strong> Claves foráneas con CASCADE</li>
+                <li><strong>Flexibilidad:</strong> Soporte para múltiples autores por libro</li>
+                <li><strong>Escalabilidad:</strong> Estructura preparada para crecimiento</li>
+                <li><strong>Consistencia:</strong> Restricciones NOT NULL y UNIQUE aplicadas</li>
+            </ul>
+        </div>
+    </div>
+</body>
+</html>

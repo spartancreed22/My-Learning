@@ -1,0 +1,107 @@
+*{
+    margin: 0%;
+}
+/* Estilos para la barra de navegación */
+body {
+    background-color: #000;
+    height: 100%;
+}
+
+.fijo {
+    margin-left: 10%;
+    margin-right: 10%;
+    width:80%;
+    position: fixed;
+    top: 20px; /* Ajusta la posición vertical según tu preferencia */
+    left: 20px; /* Ajusta la posición horizontal según tu preferencia */
+    z-index: 5;
+}
+
+.barra_nav {
+    background: rgb(202, 224, 222);
+    height: 80px;
+    width: 100%; /* Establecemos el ancho al 100% para ocupar todo el espacio disponible */
+    border-radius: 30px;
+
+}
+
+.barra_nav a {
+    text-decoration: none;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 40px;
+    color: #3b3131;
+}
+
+.barra_nav h1 {
+    width: 15rem;
+}
+
+.inicio {
+    display: inline-block;
+    width: auto; /* Ajusta el ancho automáticamente para que se ajuste al contenido */
+    margin-right: 10px; /* Puedes ajustar el margen derecho según tu preferencia */
+    vertical-align: middle;
+}
+
+.inicio i {
+    margin-right: 5px; /* Ajusta el margen derecho para separar los iconos del texto */
+}
+
+/* Estilos para el botón de cerrar sesión */
+.barra_nav .btn-cerrar {
+    border: none;
+    outline: none;
+    background: #ffffff;
+    color: #000;
+    font-size: 18px;
+    border-radius: 50px;
+    padding: 5px 15px; /* Ajustamos el espacio dentro del botón */
+    display: flex; /* Usamos flex para alinear elementos verticalmente */
+    align-items: center; /* Centramos verticalmente los elementos */
+    margin-right: 25%; /* Espacio entre el icono y el texto */
+    width: 120px; /* Cambia el ancho del botón según tus preferencias */
+}
+
+.collapse {
+    text-align: center;
+    margin-right: 30%; /* Espacio entre el icono y el texto */
+}
+
+.barra_nav .btn-cerrar:hover {
+    cursor: pointer;
+    background: #803f3f;
+    color: #000;
+}
+
+
+.contenido{
+    color:#000000;
+    margin-top: 10%;
+    width: 100%;
+}
+.botones{
+    margin-top: 10%;
+    
+}
+.tablero{
+    width: 100%;
+    margin-bottom:5%;
+    /*background-image: url(../img/table.jpeg);*/
+    background-repeat: no-repeat;
+    background-position: center top;
+    background-size: cover;
+    height: 900px;
+}
+
+.player {
+    color: #ffffff;
+}
+
+.puntos{
+    color: #ffffff;
+}
+
+.carta{
+    width: 200px;
+}
+
