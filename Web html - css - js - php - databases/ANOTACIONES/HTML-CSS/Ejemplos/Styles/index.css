@@ -1,6 +1,7 @@
 /* Crearemos la paleta de colores usando la Custom Properties para crearla mediante una "variable" */
 :root{
     --color-primario: #FFC107;
+    --color-secundario: #0097A7;
     --Negro: #000000;
     --Blanco: #ffffff;
     --color-cuaternario: #ff0000;
@@ -34,4 +35,20 @@ body{
 
 .Titulo{
     font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.Navegacion-principal{
+    background-color: var(--color-secundario);
+}
+
+
+/* Crearemos esta clase de Contenedor para poder tener todo el documento centrado como lo estamos viendo en el ejemplo */
+.Contenedor{
+    width: 120rem;
+    margin-top: 0;
+    margin-right: auto;
+    margin-bottom: 0;
+    margin-left: auto;
+
+    /* esto nos permitira centrar el contenido,  */
 }
