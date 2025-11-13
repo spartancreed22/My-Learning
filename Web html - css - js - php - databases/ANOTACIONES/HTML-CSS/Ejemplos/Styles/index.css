@@ -22,7 +22,7 @@ body{
     color: var(--Negro);
     text-align: center;
     margin-top: 2rem;
-    font-family: 'Courier New', Courier, monospace;
+    font-family: "Roboto Mono", monospace;
 }
 
 .Titulo span{
