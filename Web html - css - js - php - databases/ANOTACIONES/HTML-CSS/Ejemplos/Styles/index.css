@@ -33,9 +33,6 @@ body{
 
 /* Cambiar el tipo de fuente */
 
-.Titulo{
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-}
 
 .Navegacion-principal{
     background-color: var(--color-secundario);
@@ -50,5 +47,26 @@ body{
     margin-bottom: 0;
     margin-left: auto;
 
-    /* esto nos permitira centrar el contenido,  */
+    /* esto nos permitira centrar el contenido, ya que al aplicar el margen automatico, lo que hace es que quede bastante parejo en cada lado.
+    El codigo anterior lo podemos resumir en una sola linea de codigio ya que solamente con hacer lo siguiente podemos hacer el mismo efecto:
+
+        margin: 0 auto 0 auto; (como podemos ver esta en orden de las manesillas del 
+    reloj, arriba, derecha, abajo, izquierda.
+
+    y para resumirlo aun mas podemos usar la siguiente linea y css ya sabrá como es que se aplica.
+
+        margin: 0 auto;
+    
+        
+    Debemos crear una clase de utilidad ya que esta de contenedor tiene un ancho definido y no ocupa todo el ancho de la pantalla como en el ejemplo, por lo tanto tienesque crear unaclase que envuelva esta seccion, para poder expandir por todala pantalla.
+
+    */
+}
+
+.Nav-bg{
+    background-color: var(--color-secundario);/*Como podemosnotar esto hace que el color se expanda entodo el ancho de la pantalla*/
+}
+
+p{
+    
 }
