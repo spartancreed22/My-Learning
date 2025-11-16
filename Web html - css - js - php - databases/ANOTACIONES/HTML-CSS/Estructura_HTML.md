@@ -1,99 +1,306 @@
-# Estructura
+# Estructura HTML y Formularios - Guía Rápida
 
-HTML tiene una estructura (sintaxis) fácil y clara:
+## 📋 Estructura Básica de HTML
 
-<p> Para los parrafos
-<nav> Para las barras de navegacion
-<header> Para el encabezado del sitio web, aqui proporcionamos cierta informacion para que funcione nuestro sitio web. (titulo de la pagina - Idioma en el que se realizo - Aqui se importan archivos externos - Icono de la pagina)
-<body> Se pone toda la informacion o contenido la cual verán los usuarios 
-<main> Para todo lo que es el contenido principal
-<footer> Para el pie de pagina
-<section> Para agrupar las secciones de la pagina
-<aside> Barra lateral al lado derecho
-<div> se usad practicamente para agrupar muchas cosas por individual
-<span> es una etiqueta que no sirve para mucho pero tiene ua característica peculiar lo cual es que si necesitamos dividir un codigo dentro de un mismo titulo o algun texto.
+### Etiquetas Principales
 
+```html
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <!-- Información del sitio: título, estilos, metadatos -->
+    <title>Mi Sitio Web</title>
+  </head>
+  <body>
+    <!-- Todo el contenido visible -->
+  </body>
+</html>
+```
 
-<html> Esto tiene que cubrir todo el proyecto, ya que nos muestra todo lo que abra en la pagina
+### Etiquetas Semánticas
 
+| Etiqueta | Uso | Ejemplo |
+|----------|-----|---------|
+| `<header>` | Encabezado del sitio | Logo, menú principal |
+| `<nav>` | Barra de navegación | Menú con links |
+| `<main>` | Contenido principal | Contenido único de la página |
+| `<section>` | Sección temática | Agrupar contenido relacionado |
+| `<article>` | Contenido independiente | Blog post, noticia |
+| `<aside>` | Contenido complementario | Barra lateral, widgets |
+| `<footer>` | Pie de página | Copyright, links secundarios |
 
-## Formularios.
+### Etiquetas de Agrupación
 
-Vamos a usar varias etiquetas para poder crear el formulario:
+**`<div>`** - Contenedor genérico para agrupar elementos
+```html
+<div class="tarjeta">
+  <h2>Título</h2>
+  <p>Contenido</p>
+</div>
+```
 
-1) Primero donde ira todo el formulario se pondra la etiqueta <form> y todos los datos que esten adentro se recolectaran por este formulario
-2) Para el titulo pondremos las siguientes etiquetas: primero <fieldset><legend> Y aqui dentro escribimos el texto de nuestro titulo </legend>
-3) Y seguiremos poniendo mas campos ya que el fieldset nos sirve para agrupar todos los campos del formulario</fieldset> El legend se usa para que los usuarios puedan saber para que es el formulario.
-4) El titulo tambien puede ser directamente un h# el que se desee.
-5) Luego van los diferentes campos con sus respectivos. titulos y campos
-    * Los titulos son: <label>
-    * Los campos son: <input> los inputs son los campos donde el usuario va  a digitar o ingresar datos los cuales seran almacenados y tenemos que saber que tipo de dato necesitamos capturar para asi poderlo procesar y guardar.
+**`<span>`** - Contenedor en línea para texto específico
+```html
+<p>Este texto es <span class="destacado">importante</span>.</p>
+```
 
-## Tipos de Inputs.
+**`<p>`** - Párrafos de texto
+```html
+<p>Este es un párrafo de texto.</p>
+```
 
-Estos son todos los tipos de inputs que tenemos a nuestra disposicion:
+---
 
+## 📝 Formularios HTML
 
-### 1. Inputs de texto y números
-   
+### Estructura Básica
 
-text → Campo de texto simple.
+```html
+<form action="/procesar" method="POST">
+  <fieldset>
+    <legend>Título del Formulario</legend>
+    
+    <label for="nombre">Nombre:</label>
+    <input type="text" id="nombre" name="nombre">
+    
+    <button type="submit">Enviar</button>
+  </fieldset>
+</form>
+```
 
-password → Campo de contraseña (oculta los caracteres).
+### Componentes Principales
 
-email → Campo para correos electrónicos (valida formato).
+**`<form>`** - Contenedor del formulario
+- `action`: URL donde se envían los datos
+- `method`: GET o POST
 
-url → Campo para URLs (valida formato).
+**`<fieldset>`** - Agrupa campos relacionados
 
-search → Campo de búsqueda.
+**`<legend>`** - Título del grupo de campos
 
-tel → Campo para números de teléfono (no impone validación).
+**`<label>`** - Etiqueta descriptiva del campo
+- Atributo `for` debe coincidir con el `id` del input
 
-number → Campo para ingresar números (con controles de incremento/decremento).
+**`<input>`** - Campo de entrada de datos
+- Atributo `type` define el tipo de dato
+- Atributo `name` identifica el campo al enviar
 
-### 2. Inputs de selección y archivos
+---
 
-checkbox → Casilla de verificación (permitiendo selección múltiple).
+## 🔤 Tipos de Inputs
 
-radio → Botón de opción (solo una selección por grupo).
+### 1️⃣ Texto y Números
 
-file → Permite seleccionar y cargar archivos.
+```html
+<!-- Texto simple -->
+<input type="text" placeholder="Nombre completo">
 
-range → Control deslizante para seleccionar valores en un rango.
+<!-- Contraseña (oculta caracteres) -->
+<input type="password" placeholder="Contraseña">
 
-color → Selector de color.
+<!-- Email (valida formato) -->
+<input type="email" placeholder="correo@ejemplo.com">
 
-### 3. Inputs de fecha y hora
+<!-- URL (valida formato) -->
+<input type="url" placeholder="https://ejemplo.com">
 
-date → Selector de fecha (YYYY-MM-DD).
+<!-- Búsqueda -->
+<input type="search" placeholder="Buscar...">
 
-datetime-local → Fecha y hora sin zona horaria.
+<!-- Teléfono -->
+<input type="tel" placeholder="+57 300 123 4567">
 
-month → Selector de mes y año.
+<!-- Número con controles -->
+<input type="number" min="0" max="100" step="1">
+```
 
-week → Selector de semana y año.
+### 2️⃣ Selección
 
-time → Selector de hora.
+```html
+<!-- Checkbox (múltiple selección) -->
+<input type="checkbox" id="terminos" name="terminos">
+<label for="terminos">Acepto términos</label>
 
-### 4. Inputs ocultos y especiales
+<!-- Radio (una sola opción) -->
+<input type="radio" id="masculino" name="genero" value="M">
+<label for="masculino">Masculino</label>
+<input type="radio" id="femenino" name="genero" value="F">
+<label for="femenino">Femenino</label>
 
-hidden → Campo oculto (no visible para el usuario).
+<!-- Archivo -->
+<input type="file" accept=".pdf,.jpg">
 
-button → Botón sin funcionalidad predeterminada.
+<!-- Rango deslizante -->
+<input type="range" min="0" max="100" value="50">
 
-submit → Botón para enviar el formulario.
+<!-- Selector de color -->
+<input type="color" value="#ff0000">
+```
 
-reset → Botón para restablecer el formulario.
+### 3️⃣ Fecha y Hora
 
-image → Botón de envío con imagen en lugar de texto.
+```html
+<!-- Fecha -->
+<input type="date">
 
+<!-- Fecha y hora local -->
+<input type="datetime-local">
 
-Tambien existen los textarea los cuales se usan para cuando necesitamos que el usuario digite ,ucho texto como un mensaje largo entonces usamos esta etiqueta.
+<!-- Mes y año -->
+<input type="month">
 
+<!-- Semana -->
+<input type="week">
 
-### Boton
+<!-- Hora -->
+<input type="time">
+```
 
+### 4️⃣ Especiales
 
-Los botones en el formulario pueden tener varios formatos, ya sean mediante la etiqueta input con el type = "submit" o con la propia etiqueta.
-Otra forma también es usar la propia etiqueta de button pero a diferencia del input esta tiene etiqueta de cierre
+```html
+<!-- Campo oculto -->
+<input type="hidden" name="id" value="123">
 
+<!-- Botón personalizado -->
+<input type="button" value="Hacer algo">
+
+<!-- Botón de envío -->
+<input type="submit" value="Enviar">
+
+<!-- Botón de reseteo -->
+<input type="reset" value="Limpiar">
+
+<!-- Botón con imagen -->
+<input type="image" src="enviar.png" alt="Enviar">
+```
+
+---
+
+## 📄 Área de Texto
+
+Para textos largos como mensajes o comentarios:
+
+```html
+<label for="mensaje">Mensaje:</label>
+<textarea id="mensaje" name="mensaje" rows="5" cols="30">
+  Texto inicial (opcional)
+</textarea>
+```
+
+**Atributos útiles:**
+- `rows`: Número de líneas visibles
+- `cols`: Ancho en caracteres
+- `maxlength`: Límite de caracteres
+- `placeholder`: Texto de ayuda
+
+---
+
+## 🔘 Botones
+
+### Tres formas de crear botones:
+
+#### 1. Con `<input>`
+```html
+<input type="submit" value="Enviar">
+<input type="button" value="Cancelar">
+<input type="reset" value="Limpiar">
+```
+
+#### 2. Con `<button>` (Recomendado)
+```html
+<button type="submit">Enviar</button>
+<button type="button">Cancelar</button>
+<button type="reset">Limpiar</button>
+```
+
+#### 3. Con contenido HTML dentro
+```html
+<button type="submit">
+  <img src="icono.png" alt=""> Enviar con Icono
+</button>
+```
+
+**Diferencias clave:**
+- `<button>` permite contenido HTML (imágenes, iconos, etc.)
+- `<input>` solo permite texto simple
+- `<button>` tiene etiqueta de cierre
+
+**Tipos de botones:**
+- `submit`: Envía el formulario
+- `button`: Sin acción predeterminada (requiere JavaScript)
+- `reset`: Limpia todos los campos
+
+---
+
+## ✅ Ejemplo Completo
+
+```html
+<form action="/registro" method="POST">
+  <h2>Registro de Usuario</h2>
+  
+  <fieldset>
+    <legend>Datos Personales</legend>
+    
+    <label for="nombre">Nombre:</label>
+    <input type="text" id="nombre" name="nombre" required>
+    
+    <label for="email">Email:</label>
+    <input type="email" id="email" name="email" required>
+    
+    <label for="password">Contraseña:</label>
+    <input type="password" id="password" name="password" required>
+    
+    <label for="edad">Edad:</label>
+    <input type="number" id="edad" name="edad" min="18" max="100">
+  </fieldset>
+  
+  <fieldset>
+    <legend>Preferencias</legend>
+    
+    <input type="checkbox" id="newsletter" name="newsletter">
+    <label for="newsletter">Recibir newsletter</label>
+    
+    <label for="mensaje">Comentarios:</label>
+    <textarea id="mensaje" name="mensaje" rows="4"></textarea>
+  </fieldset>
+  
+  <button type="submit">Registrarse</button>
+  <button type="reset">Limpiar</button>
+</form>
+```
+
+---
+
+## 💡 Atributos Importantes
+
+| Atributo | Descripción | Ejemplo |
+|----------|-------------|---------|
+| `required` | Campo obligatorio | `<input required>` |
+| `placeholder` | Texto de ayuda | `<input placeholder="Ej: Juan">` |
+| `disabled` | Campo deshabilitado | `<input disabled>` |
+| `readonly` | Solo lectura | `<input readonly>` |
+| `maxlength` | Límite de caracteres | `<input maxlength="50">` |
+| `min` / `max` | Valores mínimo/máximo | `<input type="number" min="1">` |
+| `pattern` | Validación con regex | `<input pattern="[0-9]{3}">` |
+| `autocomplete` | Autocompletado | `<input autocomplete="off">` |
+
+---
+
+## 🎯 Buenas Prácticas
+
+✅ Siempre usa `<label>` con atributo `for` para accesibilidad
+
+✅ Agrupa campos relacionados con `<fieldset>`
+
+✅ Usa el `type` correcto para cada dato (mejora UX en móviles)
+
+✅ Agrega validaciones con atributos HTML5 (`required`, `pattern`, etc.)
+
+✅ Usa `<button>` en lugar de `<input type="button">` para más flexibilidad
+
+✅ Nombra los campos con el atributo `name` para envío de datos
+
+❌ No uses `<div>` cuando existen etiquetas semánticas apropiadas
+
+❌ No olvides el atributo `type` en los botones (por defecto es submit)

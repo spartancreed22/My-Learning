@@ -39,6 +39,8 @@ body{
 }
 
 
+
+
 /* Crearemos esta clase de Contenedor para poder tener todo el documento centrado como lo estamos viendo en el ejemplo */
 .Contenedor{
     width: 120rem;
@@ -67,6 +69,3 @@ body{
     background-color: var(--color-secundario);/*Como podemosnotar esto hace que el color se expanda entodo el ancho de la pantalla*/
 }
 
-p{
-    
-}
