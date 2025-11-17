@@ -36,9 +36,15 @@ body{
 
 .Navegacion-principal{
     background-color: var(--color-secundario);
+    padding: 1rem;
+    display:flex;
+    justify-content: space-between;
 }
 
-
+.Navegacion-principal a{
+    color: var(--Blanco);
+    text-decoration: none;
+}
 
 
 /* Crearemos esta clase de Contenedor para poder tener todo el documento centrado como lo estamos viendo en el ejemplo */
