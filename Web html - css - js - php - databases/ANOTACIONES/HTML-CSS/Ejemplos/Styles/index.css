@@ -44,8 +44,20 @@ body{
 .Navegacion-principal a{
     color: var(--Blanco);
     text-decoration: none;
+    font-weight: bold;
 }
 
+.Navegacion-principal a:hover{
+    background-color: var(--color-primario);
+    color: var(--Negro);
+    border-radius: 5px;
+}
+
+/* @media (min-width:480px) {
+    body{
+        background-color:coral;
+    }
+} */
 
 /* Crearemos esta clase de Contenedor para poder tener todo el documento centrado como lo estamos viendo en el ejemplo */
 .Contenedor{
