@@ -1,3 +1,7 @@
+// Ahora vamos a ver el tipo de dato BOOLEANO en TypeScript.
+
+// Los booleanos son valores lógicos que pueden ser verdaderos (true) o falsos (false). Se utilizan comúnmente en estructuras de control de flujo, como condicionales y bucles, para tomar decisiones basadas en condiciones.
+
 (() => {
     let isProgrammer: boolean = true;
 
