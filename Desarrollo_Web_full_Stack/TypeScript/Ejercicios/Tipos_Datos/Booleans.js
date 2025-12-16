@@ -1,5 +1,7 @@
 "use strict";
+// Ahora vamos a ver el tipo de dato BOOLEANO en TypeScript.
 Object.defineProperty(exports, "__esModule", { value: true });
+// Los booleanos son valores lógicos que pueden ser verdaderos (true) o falsos (false). Se utilizan comúnmente en estructuras de control de flujo, como condicionales y bucles, para tomar decisiones basadas en condiciones.
 (() => {
     let isProgrammer = true;
     console.log("¿Eres programador?: ", isProgrammer);
@@ -15,4 +17,4 @@ Object.defineProperty(exports, "__esModule", { value: true });
     // pero esto nos arrojara un mensaje de error debido a que no se puede asignatr un string a una variable de tipo boolean asi sea aen una condicion o lo que sea.
     console.log({ isProgrammer });
 })();
-//# sourceMappingURL=holaMundo.js.map
+//# sourceMappingURL=Booleans.js.map
