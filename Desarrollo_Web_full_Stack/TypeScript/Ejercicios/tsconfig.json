@@ -2,13 +2,14 @@
   // Visit https://aka.ms/tsconfig to read more about this file
   "compilerOptions": {
     // File Layout
+    "outFile": "./main.js",
     // "rootDir": "./src",
     // "outDir": "./dist",
 
     // Environment Settings
     // See also https://aka.ms/tsconfig/module
-    "module": "nodenext",
-    "target": "esnext",
+    "module": "amd",
+    "target": "es5",
     "types": [],
     // For nodejs:
     // "lib": ["esnext"],
@@ -18,6 +19,7 @@
     // Other Outputs
     "sourceMap": true,
     "declaration": true,
+    "removeComments": true,
     "declarationMap": true,
 
     // Stricter Typechecking Options
@@ -40,5 +42,15 @@
     "noUncheckedSideEffectImports": true,
     "moduleDetection": "force",
     "skipLibCheck": true,
-  }
+  },
+
+  "exclude": [
+    "node_modules",
+    "dist"
+  ],
+
+  "include": [
+    "node_modules2"
+  ]
+
 }
